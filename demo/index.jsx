@@ -3,14 +3,14 @@ import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import generateListItem from '../src/ios-sliding-operation';
+import generator from '../src/ios-sliding-operation';
 
 class App extends React.Component {
 
 	componentDidMount() {
 		const items = this.refs.items.querySelectorAll('.item')
 		for (let item of items) {
-			generateListItem(item, { duration: 3000 });
+			generator(item, { duration: 3000 });
 		}
 	}
 

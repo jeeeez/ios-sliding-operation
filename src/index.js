@@ -1,7 +1,7 @@
-export default function generateListItem($item, options = {}) {
+export default function generator($item, options = {}) {
 	const opts = Object.assign({
-		contentDOMQuery: '.content',
-		operationDOMQuery: '.controls',
+		contentSelector: '.content',
+		operationSelector: '.controls',
 		animationClass: 'drag-end',
 		duration: 0
 	}, options);
@@ -10,8 +10,8 @@ export default function generateListItem($item, options = {}) {
 
 function genTouchStart(item, opts) {
 
-	const $content = item.querySelector(opts.contentDOMQuery);
-	const $control = item.querySelector(opts.operationDOMQuery);
+	const $content = item.querySelector(opts.contentSelector);
+	const $control = item.querySelector(opts.operationSelector);
 
 	const animationClass = opts.animationClass;
 
