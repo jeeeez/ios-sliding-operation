@@ -166,5 +166,3 @@ function genTouchStart(item, opts) {
 /******/ ]);
 });
 //# sourceMappingURL=index.js.map
-
-console.log(2)
