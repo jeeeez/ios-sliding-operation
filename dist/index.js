@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -73,13 +83,13 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.default = generateListItem;
-function generateListItem($item) {
+exports.default = generator;
+function generator($item) {
 	var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
 	var opts = Object.assign({
-		contentDOMQuery: '.content',
-		operationDOMQuery: '.controls',
+		contentSelector: '.content',
+		operationSelector: '.controls',
 		animationClass: 'drag-end',
 		duration: 0
 	}, options);
@@ -88,8 +98,8 @@ function generateListItem($item) {
 
 function genTouchStart(item, opts) {
 
-	var $content = item.querySelector(opts.contentDOMQuery);
-	var $control = item.querySelector(opts.operationDOMQuery);
+	var $content = item.querySelector(opts.contentSelector);
+	var $control = item.querySelector(opts.operationSelector);
 
 	var animationClass = opts.animationClass;
 
@@ -154,4 +164,7 @@ function genTouchStart(item, opts) {
 
 /***/ })
 /******/ ]);
+});
 //# sourceMappingURL=index.js.map
+
+console.log(2)

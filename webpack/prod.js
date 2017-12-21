@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var autoprefixer = require('autoprefixer');
 var commonConfig = require('./common');
 
@@ -12,7 +13,8 @@ module.exports = {
 
 	output: {
 		path: path.join(__dirname, '../dist'),
-		filename: 'index.js'
+		filename: 'index.js',
+		libraryTarget: 'umd'
 	},
 
 
@@ -23,9 +25,9 @@ module.exports = {
 				version: JSON.stringify(require('../package.json').version)
 			}
 		}),
-		new webpack.NoEmitOnErrorsPlugin(),
+		new webpack.NoEmitOnErrorsPlugin()
 	],
 	resolve: commonConfig.resolve,
 
-	module:  commonConfig.module
+	module: commonConfig.module
 };

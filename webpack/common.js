@@ -20,7 +20,7 @@ module.exports = {
 				},
 				loader: require.resolve('eslint-loader'),
 			}],
-			exclude: /node_modules/
+			exclude: /(node_modules|dist)/
 		}, {
 			test: /\.(js|jsx)$/,
 			loaders: ['babel-loader'],

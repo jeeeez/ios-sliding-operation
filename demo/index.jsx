@@ -3,7 +3,7 @@ import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import generator from '../src/ios-sliding-operation';
+import generator from '../src/index';
 
 class App extends React.Component {
 
